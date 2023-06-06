@@ -32,7 +32,10 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
@@ -55,13 +58,7 @@ jobs:
       #   with:
       #     path: '**/node_modules'
       #     key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
-
-
-      - name: Sync node version and setup cache
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-          cache: "pnpm"
+      
       - name: Install app dependencies and build web
         run: pnpm install --frozen-lockfile
 
