@@ -12,6 +12,10 @@
     "build": "tauri build",
     "tauri": "tauri"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bin-Huang/chatbox.git"
+  },
   "keywords": [],
   "author": {
     "name": "bennhuang",
