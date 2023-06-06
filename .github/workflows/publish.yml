@@ -56,6 +56,9 @@ jobs:
       #     path: '**/node_modules'
       #     key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
 
+      - name: long network timeout
+        run: yarn config set network-timeout 3000000
+
       - name: install frontend dependencies
         run: yarn install # change this to npm or pnpm depending on which one you use
 
